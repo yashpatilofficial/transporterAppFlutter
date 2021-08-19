@@ -1,58 +1,37 @@
-
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.liveasy.liveasy"
+    package="com.liveasy.transport"
     android:installLocation="auto"
-    android:versionCode="100"
-    android:versionName="1.0.0">
+    android:versionCode="105"
+    android:versionName="1.0.5">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <!--    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"/> //this queries all packages , unless alternative for specific phone is found I am placing this here.-->
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
-    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
-    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <!-- io.flutter.app.FlutterApplication is an android.app.Application that
-         calls FlutterMain.startInitialization(this); in its onCreate method.
-         In most cases you can leave this as-is, but you if you want to provide
-         additional functionality it is fine to subclass or reimplement
-         FlutterApplication and put your custom class here. -->
-    <!--    <queries>-->
-    <!--        <intent>-->
-    <!--            <action android:name="android.intent.action.VIEW" />-->
-    <!--            <data android:scheme="https" />-->
-    <!--        </intent>-->
-    <!--        <intent>-->
-    <!--            <action android:name="android.intent.action.DIAL" />-->
-    <!--            <data android:scheme="tel" />-->
-    <!--        </intent>-->
-    <!--        <intent>-->
-    <!--            <action android:name="android.intent.action.SEND" />-->
-    <!--            <data android:mimeType="*/*" />-->
-    <!--        </intent>-->
-    <!--    </queries>-->
 
     <application
-        android:label="liveasy"
-        android:icon="@mipmap/ic_launcher">
-        <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="${applicationId}.com.shekarmudaliyar.social_share"
-            android:exported="false"
-            android:grantUriPermissions="true"
-            tools:replace="android:authorities">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/filepaths" />
-        </provider>
+        android:icon="@mipmap/ic_launcher"
+        android:label="liveasy">
+<!--        <provider-->
+<!--            android:name="androidx.core.content.FileProvider"-->
+<!--            android:authorities="${applicationId}.com.shekarmudaliyar.social_share"-->
+<!--            android:exported="false"-->
+<!--            android:grantUriPermissions="true"-->
+<!--            tools:replace="android:authorities">-->
+<!--            <meta-data-->
+<!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
+<!--                android:resource="@xml/filepaths" />-->
+<!--        </provider>-->
         <activity
             android:name=".MainActivity"
-            android:launchMode="singleTop"
-            android:theme="@style/LaunchTheme"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:theme="@style/LaunchTheme"
             android:windowSoftInputMode="adjustResize">
             <!-- Specifies an Android theme to apply to this Activity as soon as
                  the Android process has started. This theme is visible to the user
@@ -69,7 +48,6 @@
             <meta-data
                 android:name="io.flutter.embedding.android.SplashScreenDrawable"
                 android:resource="@drawable/launch_background" />
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -80,8 +58,8 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
-
-        <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCj7yNTVRIMNCJvPpj7Z30S1ByXkXoVucc"/>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCj7yNTVRIMNCJvPpj7Z30S1ByXkXoVucc" />
     </application>
 </manifest>
