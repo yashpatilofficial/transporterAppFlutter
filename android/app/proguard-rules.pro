@@ -1,1 +1,1 @@
--keep class com.liveasy.liveasy.BuildConfig { *; }
+-keep class com.liveasy.transport.BuildConfig { *; }

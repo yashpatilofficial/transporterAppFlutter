@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\chira\\flutter_app\\liveasy\\build\\firebase_remote_config\\intermediates\\res\\merged\\release\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\chira\\.gradle\\caches\\transforms-2\\files-2.1\\ed31c76d88ede0989aa83ac1ec3dd440\\core-1.2.0\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "C:\\Users\\chira\\flutter_app\\liveasy\\build\\firebase_remote_config\\intermediates\\res\\merged\\release\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\chira\\.gradle\\caches\\transforms-2\\files-2.1\\ed31c76d88ede0989aa83ac1ec3dd440\\core-1.2.0\\res\\layout-v21\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "C:\\Users\\chira\\flutter_app\\liveasy\\build\\firebase_remote_config\\intermediates\\res\\merged\\release\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\chira\\.gradle\\caches\\transforms-2\\files-2.1\\ed31c76d88ede0989aa83ac1ec3dd440\\core-1.2.0\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\chira\\flutter_app\\liveasy\\build\\firebase_remote_config\\intermediates\\res\\merged\\release\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\chira\\.gradle\\caches\\transforms-2\\files-2.1\\ed31c76d88ede0989aa83ac1ec3dd440\\core-1.2.0\\res\\layout-v21\\notification_action_tombstone.xml"
+    }
+]

@@ -41,15 +41,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Liveasy needs your location permission when in use.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Liveasy needs your photo library permission</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Liveasy needs your camera permission</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Liveasy needs your microphone permission</string>
-	<key>NSContactsUsageDescription</key>
-    <string>Liveasy requires contacts access to function properly.</string>
 </dict>
 </plist>

@@ -1,6 +1,6 @@
 # liveasy
 
-Liveasy Transport
+A new Flutter project.
 
 ## Getting Started
 

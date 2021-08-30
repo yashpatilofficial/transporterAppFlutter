@@ -42,10 +42,10 @@ class _ShareButtonState extends State<ShareButton> {
     });
 
     final DynamicLinkParameters parameters = DynamicLinkParameters(
-        uriPrefix: 'https://liveasywa.page.link',
-        link: Uri.parse('https://liveasywa.page.link/${widget.loadDetails.loadId}'),
+        uriPrefix: 'https://liveasy.page.link',
+        link: Uri.parse('https://liveasy.page.link/${widget.loadDetails.loadId}'),
         androidParameters: AndroidParameters(
-          packageName: 'com.liveasy.liveasy',
+          packageName: 'com.liveasy.transport',
           minimumVersion: 0,
         ),
         dynamicLinkParametersOptions: DynamicLinkParametersOptions(

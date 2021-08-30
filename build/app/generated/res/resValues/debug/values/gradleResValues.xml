@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Automatically generated file. DO NOT MODIFY -->
+
+    <!-- Value from default config. -->
+    <string name="biddingApiUrl" translatable="false">http://65.2.158.95:8080/bid</string>
+    <!-- Value from default config. -->
+    <string name="bookingApiUrl" translatable="false">http://3.108.202.141:8090/booking</string>
+    <!-- Value from default config. -->
+    <string name="clientIdMapMyIndia" translatable="false">33OkryzDZsJmp0siGnK04TeuQrg3DWRxswnTg_VBiHew-2D1tA3oa3fthrGnx4vwbwlbF_xT2T4P9dykuS1GUNmbRb8e5CUgz-RgWDyQspeDCXkXK5Nagw==</string>
+    <!-- Value from default config. -->
+    <string name="clientSecretMapMyIndia" translatable="false">lrFxI-iSEg9xHXNZXiqUoprc9ZvWP_PDWBDw94qhrze0sUkn7LBDwRNFscpDTVFH7aQT4tu6ycN0492wqPs-ewpjObJ6xuR7iRufmSVcnt9fys5dp0F5jlHLxBEj7oqq</string>
+    <!-- Value from default config. -->
+    <string name="documentApiUrl" translatable="false">http://65.1.115.84:9090/document</string>
+    <!-- Value from default config. -->
+    <string name="driverApiUrl" translatable="false">http://13.233.211.127:8080/driver</string>
+    <!-- Value from default config. -->
+    <string name="gpsApiUrl" translatable="false">http://3.108.162.7:3000/locationbyimei</string>
+    <!-- Value from default config. -->
+    <string name="loadApiUrl" translatable="false">http://15.207.224.92:8080/load</string>
+    <!-- Value from default config. -->
+    <string name="mapKey" translatable="false">AIzaSyCj7yNTVRIMNCJvPpj7Z30S1ByXkXoVucc</string>
+    <!-- Value from default config. -->
+    <string name="shipperApiUrl" translatable="false">http://65.0.113.164:8080/shipper</string>
+    <!-- Value from default config. -->
+    <string name="transporterApiUrl" translatable="false">http://65.0.211.45:9090/transporter</string>
+    <!-- Value from default config. -->
+    <string name="truckApiUrl" translatable="false">http://3.7.133.111:9090/truck</string>
+
+</resources>

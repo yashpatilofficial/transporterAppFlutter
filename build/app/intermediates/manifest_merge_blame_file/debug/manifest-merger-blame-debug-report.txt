@@ -1,0 +1,549 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.liveasy.transport"
+4    android:installLocation="auto"
+5    android:versionCode="104"
+6    android:versionName="1.0.4" >
+7
+8    <uses-sdk
+9        android:minSdkVersion="20"
+10        android:targetSdkVersion="30" />
+11    <!--
+12         Flutter needs it to communicate with the running application
+13         to allow setting breakpoints, to provide hot reload, etc.
+14    -->
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:8:5-67
+15-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:8:22-64
+16    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+16-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:9:5-81
+16-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:9:22-78
+17    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+17-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:10:5-79
+17-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:10:22-76
+18    <uses-permission android:name="android.permission.READ_CONTACTS" />
+18-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:11:5-72
+18-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:11:22-69
+19    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+19-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:12:5-73
+19-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:12:22-70
+20    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+20-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:13:5-71
+20-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:13:22-68
+21    <uses-permission android:name="android.permission.WAKE_LOCK" />
+21-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-68
+21-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-65
+22    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+22-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:9:5-79
+22-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:9:22-76
+23
+24    <queries>
+24-->[:contacts_service] C:\Users\chira\flutter_app\liveasy\build\contacts_service\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-24:15
+25        <intent>
+25-->[:contacts_service] C:\Users\chira\flutter_app\liveasy\build\contacts_service\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-14:18
+26            <action android:name="android.accounts.AccountAuthenticator" />
+26-->[:contacts_service] C:\Users\chira\flutter_app\liveasy\build\contacts_service\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-76
+26-->[:contacts_service] C:\Users\chira\flutter_app\liveasy\build\contacts_service\intermediates\library_manifest\debug\AndroidManifest.xml:13:21-73
+27        </intent>
+28        <!-- Allows the app to load an icon corresponding to the custom MIME type. -->
+29        <intent>
+29-->[:contacts_service] C:\Users\chira\flutter_app\liveasy\build\contacts_service\intermediates\library_manifest\debug\AndroidManifest.xml:16:9-23:18
+30            <action android:name="android.intent.action.VIEW" />
+30-->[:contacts_service] C:\Users\chira\flutter_app\liveasy\build\contacts_service\intermediates\library_manifest\debug\AndroidManifest.xml:17:13-65
+30-->[:contacts_service] C:\Users\chira\flutter_app\liveasy\build\contacts_service\intermediates\library_manifest\debug\AndroidManifest.xml:17:21-62
+31
+32            <data
+32-->[:contacts_service] C:\Users\chira\flutter_app\liveasy\build\contacts_service\intermediates\library_manifest\debug\AndroidManifest.xml:19:13-22:44
+33                android:host="com.android.contacts"
+33-->[:contacts_service] C:\Users\chira\flutter_app\liveasy\build\contacts_service\intermediates\library_manifest\debug\AndroidManifest.xml:20:17-52
+34                android:mimeType="vnd.android.cursor.item/*"
+34-->[:contacts_service] C:\Users\chira\flutter_app\liveasy\build\contacts_service\intermediates\library_manifest\debug\AndroidManifest.xml:21:17-61
+35                android:scheme="content" />
+35-->[:contacts_service] C:\Users\chira\flutter_app\liveasy\build\contacts_service\intermediates\library_manifest\debug\AndroidManifest.xml:22:17-41
+36        </intent>
+37    </queries> <!-- Required by older versions of Google Play services to create IID tokens -->
+38    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+38-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\3542cca6341df822477d46fb20f06e3b\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:25:5-82
+38-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\3542cca6341df822477d46fb20f06e3b\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:25:22-79
+39    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+39-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\00e5b9fd3c7b2b88dcc1266008c17bd8\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:26:5-110
+39-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\00e5b9fd3c7b2b88dcc1266008c17bd8\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:26:22-107
+40
+41    <uses-feature
+41-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\fc5087fbe13173432789bf9c0cfcffa3\jetified-play-services-maps-17.0.0\AndroidManifest.xml:26:5-28:35
+42        android:glEsVersion="0x00020000"
+42-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\fc5087fbe13173432789bf9c0cfcffa3\jetified-play-services-maps-17.0.0\AndroidManifest.xml:27:9-41
+43        android:required="true" />
+43-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\fc5087fbe13173432789bf9c0cfcffa3\jetified-play-services-maps-17.0.0\AndroidManifest.xml:28:9-32
+44
+45    <application
+45-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:15:5-63:19
+46        android:name="androidx.multidex.MultiDexApplication"
+47        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+47-->[androidx.core:core:1.2.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\ed31c76d88ede0989aa83ac1ec3dd440\core-1.2.0\AndroidManifest.xml:24:18-86
+48        android:debuggable="true"
+49        android:icon="@mipmap/ic_launcher"
+49-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:16:9-43
+50        android:label="liveasy" >
+50-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:17:9-32
+51
+52        <!-- <provider -->
+53        <!-- android:name="androidx.core.content.FileProvider" -->
+54        <!-- android:authorities="${applicationId}.com.shekarmudaliyar.social_share" -->
+55        <!-- android:exported="false" -->
+56        <!-- android:grantUriPermissions="true" -->
+57        <!-- tools:replace="android:authorities"> -->
+58        <!-- <meta-data -->
+59        <!-- android:name="android.support.FILE_PROVIDER_PATHS" -->
+60        <!-- android:resource="@xml/filepaths" /> -->
+61        <!-- </provider> -->
+62        <activity
+62-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:28:9-54:20
+63            android:name="com.liveasy.transport.MainActivity"
+63-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:29:13-41
+64            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+64-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:30:13-163
+65            android:hardwareAccelerated="true"
+65-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:31:13-47
+66            android:launchMode="singleTop"
+66-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:32:13-43
+67            android:theme="@style/LaunchTheme"
+67-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:33:13-47
+68            android:windowSoftInputMode="adjustResize" >
+68-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:34:13-55
+69
+70            <!--
+71                 Specifies an Android theme to apply to this Activity as soon as
+72                 the Android process has started. This theme is visible to the user
+73                 while the Flutter UI initializes. After that, this theme continues
+74                 to determine the Window background behind the Flutter UI.
+75            -->
+76            <meta-data
+76-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:39:13-41:57
+77                android:name="io.flutter.embedding.android.NormalTheme"
+77-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:40:17-72
+78                android:resource="@style/NormalTheme" />
+78-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:41:17-54
+79            <!--
+80                 Displays an Android View that continues showing the launch screen
+81                 Drawable until Flutter paints its first frame, then this splash
+82                 screen fades out. A splash screen is useful to avoid any visual
+83                 gap between the end of Android's launch screen and the painting of
+84                 Flutter's first frame.
+85            -->
+86            <meta-data
+86-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:47:13-49:66
+87                android:name="io.flutter.embedding.android.SplashScreenDrawable"
+87-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:48:17-81
+88                android:resource="@drawable/launch_background" />
+88-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:49:17-63
+89
+90            <intent-filter>
+90-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:50:13-53:29
+91                <action android:name="android.intent.action.MAIN" />
+91-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:51:17-69
+91-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:51:25-66
+92
+93                <category android:name="android.intent.category.LAUNCHER" />
+93-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:52:17-77
+93-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:52:27-74
+94            </intent-filter>
+95        </activity>
+96        <!--
+97             Don't delete the meta-data below.
+98             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+99        -->
+100        <meta-data
+100-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:57:9-59:33
+101            android:name="flutterEmbedding"
+101-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:58:13-44
+102            android:value="2" />
+102-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:59:13-30
+103        <meta-data
+103-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:60:9-62:71
+104            android:name="com.google.android.geo.API_KEY"
+104-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:61:13-58
+105            android:value="AIzaSyCj7yNTVRIMNCJvPpj7Z30S1ByXkXoVucc" />
+105-->C:\Users\chira\flutter_app\liveasy\android\app\src\main\AndroidManifest.xml:62:13-68
+106
+107        <service
+107-->[:firebase_dynamic_links] C:\Users\chira\flutter_app\liveasy\build\firebase_dynamic_links\intermediates\library_manifest\debug\AndroidManifest.xml:10:9-14:19
+108            android:name="com.google.firebase.components.ComponentDiscoveryService"
+108-->[:firebase_dynamic_links] C:\Users\chira\flutter_app\liveasy\build\firebase_dynamic_links\intermediates\library_manifest\debug\AndroidManifest.xml:10:18-89
+109            android:directBootAware="true"
+109-->[com.google.firebase:firebase-common:20.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\9947ca09488c9964b8669e463f642c4d\jetified-firebase-common-20.0.0\AndroidManifest.xml:35:13-43
+110            android:exported="false" >
+110-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\3542cca6341df822477d46fb20f06e3b\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:51:13-37
+111            <meta-data
+111-->[:firebase_dynamic_links] C:\Users\chira\flutter_app\liveasy\build\firebase_dynamic_links\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-13:85
+112                android:name="com.google.firebase.components:io.flutter.plugins.firebasedynamiclinks.FlutterFirebaseAppRegistrar"
+112-->[:firebase_dynamic_links] C:\Users\chira\flutter_app\liveasy\build\firebase_dynamic_links\intermediates\library_manifest\debug\AndroidManifest.xml:12:17-130
+113                android:value="com.google.firebase.components.ComponentRegistrar" />
+113-->[:firebase_dynamic_links] C:\Users\chira\flutter_app\liveasy\build\firebase_dynamic_links\intermediates\library_manifest\debug\AndroidManifest.xml:13:17-82
+114            <meta-data
+114-->[:firebase_auth] C:\Users\chira\flutter_app\liveasy\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+115                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
+115-->[:firebase_auth] C:\Users\chira\flutter_app\liveasy\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
+116                android:value="com.google.firebase.components.ComponentRegistrar" />
+116-->[:firebase_auth] C:\Users\chira\flutter_app\liveasy\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+117            <meta-data
+117-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:34:13-36:85
+118                android:name="com.google.firebase.components:io.flutter.plugins.firebase.messaging.FlutterFirebaseAppRegistrar"
+118-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:35:17-128
+119                android:value="com.google.firebase.components.ComponentRegistrar" />
+119-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:36:17-82
+120            <meta-data
+120-->[:firebase_core] C:\Users\chira\flutter_app\liveasy\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+121                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+121-->[:firebase_core] C:\Users\chira\flutter_app\liveasy\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
+122                android:value="com.google.firebase.components.ComponentRegistrar" />
+122-->[:firebase_core] C:\Users\chira\flutter_app\liveasy\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+123            <meta-data
+123-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\3542cca6341df822477d46fb20f06e3b\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:52:13-54:85
+124                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+124-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\3542cca6341df822477d46fb20f06e3b\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:53:17-119
+125                android:value="com.google.firebase.components.ComponentRegistrar" />
+125-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\3542cca6341df822477d46fb20f06e3b\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:54:17-82
+126            <meta-data
+126-->[com.google.firebase:firebase-datatransport:18.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\561b66e9402ff75155a364e60b627e75\jetified-firebase-datatransport-18.0.0\AndroidManifest.xml:28:13-30:85
+127                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+127-->[com.google.firebase:firebase-datatransport:18.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\561b66e9402ff75155a364e60b627e75\jetified-firebase-datatransport-18.0.0\AndroidManifest.xml:29:17-115
+128                android:value="com.google.firebase.components.ComponentRegistrar" />
+128-->[com.google.firebase:firebase-datatransport:18.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\561b66e9402ff75155a364e60b627e75\jetified-firebase-datatransport-18.0.0\AndroidManifest.xml:30:17-82
+129            <meta-data
+129-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:77:13-79:85
+130                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+130-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:78:17-109
+131                android:value="com.google.firebase.components.ComponentRegistrar" />
+131-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:79:17-82
+132            <meta-data
+132-->[com.google.firebase:firebase-dynamic-links:20.1.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\971e8b3d4de42adcd445b46ec01dc482\jetified-firebase-dynamic-links-20.1.0\AndroidManifest.xml:11:13-13:85
+133                android:name="com.google.firebase.components:com.google.firebase.dynamiclinks.internal.FirebaseDynamicLinkRegistrar"
+133-->[com.google.firebase:firebase-dynamic-links:20.1.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\971e8b3d4de42adcd445b46ec01dc482\jetified-firebase-dynamic-links-20.1.0\AndroidManifest.xml:12:17-133
+134                android:value="com.google.firebase.components.ComponentRegistrar" />
+134-->[com.google.firebase:firebase-dynamic-links:20.1.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\971e8b3d4de42adcd445b46ec01dc482\jetified-firebase-dynamic-links-20.1.0\AndroidManifest.xml:13:17-82
+135            <meta-data
+135-->[com.google.android.gms:play-services-measurement-api:19.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\066286bd2b0f9c85ce40119ad6a215d0\jetified-play-services-measurement-api-19.0.0\AndroidManifest.xml:30:13-32:85
+136                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+136-->[com.google.android.gms:play-services-measurement-api:19.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\066286bd2b0f9c85ce40119ad6a215d0\jetified-play-services-measurement-api-19.0.0\AndroidManifest.xml:31:17-139
+137                android:value="com.google.firebase.components.ComponentRegistrar" />
+137-->[com.google.android.gms:play-services-measurement-api:19.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\066286bd2b0f9c85ce40119ad6a215d0\jetified-play-services-measurement-api-19.0.0\AndroidManifest.xml:32:17-82
+138            <meta-data
+138-->[com.google.firebase:firebase-installations:17.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\e208ba4b5b1f5a4ea5145ce01cb05ef6\jetified-firebase-installations-17.0.0\AndroidManifest.xml:18:13-20:85
+139                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+139-->[com.google.firebase:firebase-installations:17.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\e208ba4b5b1f5a4ea5145ce01cb05ef6\jetified-firebase-installations-17.0.0\AndroidManifest.xml:19:17-127
+140                android:value="com.google.firebase.components.ComponentRegistrar" />
+140-->[com.google.firebase:firebase-installations:17.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\e208ba4b5b1f5a4ea5145ce01cb05ef6\jetified-firebase-installations-17.0.0\AndroidManifest.xml:20:17-82
+141        </service>
+142        <service
+142-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-15:72
+143            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingBackgroundService"
+143-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-107
+144            android:exported="false"
+144-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-37
+145            android:permission="android.permission.BIND_JOB_SERVICE" />
+145-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-69
+146        <service
+146-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:16:9-22:19
+147            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingService"
+147-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:17:13-97
+148            android:exported="false" >
+148-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:18:13-37
+149            <intent-filter>
+149-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:19:13-21:29
+150                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+150-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:20:17-78
+150-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:20:25-75
+151            </intent-filter>
+152        </service>
+153
+154        <receiver
+154-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:24:9-31:20
+155            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingReceiver"
+155-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:25:13-98
+156            android:exported="true"
+156-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:26:13-36
+157            android:permission="com.google.android.c2dm.permission.SEND" >
+157-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:27:13-73
+158            <intent-filter>
+158-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:28:13-30:29
+159                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+159-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:29:17-81
+159-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:29:25-78
+160            </intent-filter>
+161        </receiver>
+162
+163        <provider
+163-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:39:9-43:38
+164            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingInitProvider"
+164-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:40:13-102
+165            android:authorities="com.liveasy.transport.flutterfirebasemessaginginitprovider"
+165-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:41:13-88
+166            android:exported="false"
+166-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:42:13-37
+167            android:initOrder="99" />
+167-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:43:13-35
+168        <provider
+168-->[:image_picker] C:\Users\chira\flutter_app\liveasy\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-16:20
+169            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+169-->[:image_picker] C:\Users\chira\flutter_app\liveasy\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-82
+170            android:authorities="com.liveasy.transport.flutter.image_provider"
+170-->[:image_picker] C:\Users\chira\flutter_app\liveasy\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-74
+171            android:exported="false"
+171-->[:image_picker] C:\Users\chira\flutter_app\liveasy\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-37
+172            android:grantUriPermissions="true" >
+172-->[:image_picker] C:\Users\chira\flutter_app\liveasy\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-47
+173            <meta-data
+173-->[:image_picker] C:\Users\chira\flutter_app\liveasy\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-15:75
+174                android:name="android.support.FILE_PROVIDER_PATHS"
+174-->[:image_picker] C:\Users\chira\flutter_app\liveasy\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:14:17-67
+175                android:resource="@xml/flutter_image_picker_file_paths" />
+175-->[:image_picker] C:\Users\chira\flutter_app\liveasy\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:15:17-72
+176        </provider>
+177        <provider
+177-->[:wc_flutter_share] C:\Users\chira\flutter_app\liveasy\build\wc_flutter_share\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-16:20
+178            android:name="com.wisecrab.wc_flutter_share.WcFlutterShareFileProvider"
+178-->[:wc_flutter_share] C:\Users\chira\flutter_app\liveasy\build\wc_flutter_share\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-84
+179            android:authorities="com.liveasy.transport.fileprovider.github.com/com/wisecrab/wc-flutter-share"
+179-->[:wc_flutter_share] C:\Users\chira\flutter_app\liveasy\build\wc_flutter_share\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-105
+180            android:exported="false"
+180-->[:wc_flutter_share] C:\Users\chira\flutter_app\liveasy\build\wc_flutter_share\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-37
+181            android:grantUriPermissions="true" >
+181-->[:wc_flutter_share] C:\Users\chira\flutter_app\liveasy\build\wc_flutter_share\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-47
+182            <meta-data
+182-->[:image_picker] C:\Users\chira\flutter_app\liveasy\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-15:75
+183                android:name="android.support.FILE_PROVIDER_PATHS"
+183-->[:image_picker] C:\Users\chira\flutter_app\liveasy\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:14:17-67
+184                android:resource="@xml/wc_flutter_share_filepaths" />
+184-->[:image_picker] C:\Users\chira\flutter_app\liveasy\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:15:17-72
+185        </provider>
+186
+187        <activity
+187-->[:url_launcher] C:\Users\chira\flutter_app\liveasy\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-11:74
+188            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+188-->[:url_launcher] C:\Users\chira\flutter_app\liveasy\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-74
+189            android:exported="false"
+189-->[:url_launcher] C:\Users\chira\flutter_app\liveasy\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-37
+190            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+190-->[:url_launcher] C:\Users\chira\flutter_app\liveasy\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-71
+191
+192        <receiver
+192-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\3542cca6341df822477d46fb20f06e3b\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:28:9-35:20
+193            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+193-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\3542cca6341df822477d46fb20f06e3b\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:29:13-78
+194            android:exported="true"
+194-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\3542cca6341df822477d46fb20f06e3b\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:30:13-36
+195            android:permission="com.google.android.c2dm.permission.SEND" >
+195-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\3542cca6341df822477d46fb20f06e3b\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:31:13-73
+196            <intent-filter>
+196-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:28:13-30:29
+197                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+197-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:29:17-81
+197-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:29:25-78
+198            </intent-filter>
+199        </receiver>
+200        <!--
+201             FirebaseMessagingService performs security checks at runtime,
+202             but set to not exported to explicitly avoid allowing another app to call it.
+203        -->
+204        <service
+204-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\3542cca6341df822477d46fb20f06e3b\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:41:9-48:19
+205            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+205-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\3542cca6341df822477d46fb20f06e3b\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:42:13-82
+206            android:directBootAware="true"
+206-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\3542cca6341df822477d46fb20f06e3b\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:43:13-43
+207            android:exported="false" >
+207-->[com.google.firebase:firebase-messaging:22.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\3542cca6341df822477d46fb20f06e3b\jetified-firebase-messaging-22.0.0\AndroidManifest.xml:44:13-37
+208            <intent-filter android:priority="-500" >
+208-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:19:13-21:29
+209                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+209-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:20:17-78
+209-->[:firebase_messaging] C:\Users\chira\flutter_app\liveasy\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:20:25-75
+210            </intent-filter>
+211        </service>
+212        <service
+212-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\f0e8daa6b4397e8b56f5bad43efe5c55\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:29:9-35:19
+213            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+213-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\f0e8daa6b4397e8b56f5bad43efe5c55\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:30:13-103
+214            android:exported="false" >
+214-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\f0e8daa6b4397e8b56f5bad43efe5c55\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:31:13-37
+215            <meta-data
+215-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\f0e8daa6b4397e8b56f5bad43efe5c55\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:32:13-34:39
+216                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+216-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\f0e8daa6b4397e8b56f5bad43efe5c55\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:33:17-94
+217                android:value="cct" />
+217-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\f0e8daa6b4397e8b56f5bad43efe5c55\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:34:17-36
+218        </service>
+219
+220        <activity
+220-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:27:9-44:20
+221            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+221-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:28:13-80
+222            android:excludeFromRecents="true"
+222-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:29:13-46
+223            android:exported="true"
+223-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:30:13-36
+224            android:launchMode="singleTask"
+224-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:31:13-44
+225            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+225-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:32:13-72
+226            <intent-filter>
+226-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:33:13-43:29
+227                <action android:name="android.intent.action.VIEW" />
+227-->[:contacts_service] C:\Users\chira\flutter_app\liveasy\build\contacts_service\intermediates\library_manifest\debug\AndroidManifest.xml:17:13-65
+227-->[:contacts_service] C:\Users\chira\flutter_app\liveasy\build\contacts_service\intermediates\library_manifest\debug\AndroidManifest.xml:17:21-62
+228
+229                <category android:name="android.intent.category.DEFAULT" />
+229-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:17-76
+229-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:27-73
+230                <category android:name="android.intent.category.BROWSABLE" />
+230-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:37:17-78
+230-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:37:27-75
+231
+232                <data
+232-->[:contacts_service] C:\Users\chira\flutter_app\liveasy\build\contacts_service\intermediates\library_manifest\debug\AndroidManifest.xml:19:13-22:44
+233                    android:host="firebase.auth"
+233-->[:contacts_service] C:\Users\chira\flutter_app\liveasy\build\contacts_service\intermediates\library_manifest\debug\AndroidManifest.xml:20:17-52
+234                    android:path="/"
+235                    android:scheme="genericidp" />
+235-->[:contacts_service] C:\Users\chira\flutter_app\liveasy\build\contacts_service\intermediates\library_manifest\debug\AndroidManifest.xml:22:17-41
+236            </intent-filter>
+237        </activity>
+238        <activity
+238-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:45:9-62:20
+239            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+239-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:46:13-79
+240            android:excludeFromRecents="true"
+240-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:47:13-46
+241            android:exported="true"
+241-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:48:13-36
+242            android:launchMode="singleTask"
+242-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:49:13-44
+243            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+243-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:50:13-72
+244            <intent-filter>
+244-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:51:13-61:29
+245                <action android:name="android.intent.action.VIEW" />
+245-->[:contacts_service] C:\Users\chira\flutter_app\liveasy\build\contacts_service\intermediates\library_manifest\debug\AndroidManifest.xml:17:13-65
+245-->[:contacts_service] C:\Users\chira\flutter_app\liveasy\build\contacts_service\intermediates\library_manifest\debug\AndroidManifest.xml:17:21-62
+246
+247                <category android:name="android.intent.category.DEFAULT" />
+247-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:17-76
+247-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:27-73
+248                <category android:name="android.intent.category.BROWSABLE" />
+248-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:37:17-78
+248-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:37:27-75
+249
+250                <data
+250-->[:contacts_service] C:\Users\chira\flutter_app\liveasy\build\contacts_service\intermediates\library_manifest\debug\AndroidManifest.xml:19:13-22:44
+251                    android:host="firebase.auth"
+251-->[:contacts_service] C:\Users\chira\flutter_app\liveasy\build\contacts_service\intermediates\library_manifest\debug\AndroidManifest.xml:20:17-52
+252                    android:path="/"
+253                    android:scheme="recaptcha" />
+253-->[:contacts_service] C:\Users\chira\flutter_app\liveasy\build\contacts_service\intermediates\library_manifest\debug\AndroidManifest.xml:22:17-41
+254            </intent-filter>
+255        </activity>
+256
+257        <service
+257-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:64:9-73:19
+258            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
+258-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:65:13-101
+259            android:enabled="true"
+259-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:66:13-35
+260            android:exported="false" >
+260-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:67:13-37
+261            <intent-filter>
+261-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:68:13-72:29
+262                <action android:name="com.google.firebase.auth.api.gms.service.START" />
+262-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:69:17-89
+262-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:69:25-86
+263
+264                <category android:name="android.intent.category.DEFAULT" />
+264-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:17-76
+264-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\56c82d0736afeef34beb13c4bcc8edfc\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:27-73
+265            </intent-filter>
+266        </service>
+267
+268        <provider
+268-->[com.google.firebase:firebase-common:20.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\9947ca09488c9964b8669e463f642c4d\jetified-firebase-common-20.0.0\AndroidManifest.xml:26:9-31:39
+269            android:name="com.google.firebase.provider.FirebaseInitProvider"
+269-->[com.google.firebase:firebase-common:20.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\9947ca09488c9964b8669e463f642c4d\jetified-firebase-common-20.0.0\AndroidManifest.xml:27:13-77
+270            android:authorities="com.liveasy.transport.firebaseinitprovider"
+270-->[com.google.firebase:firebase-common:20.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\9947ca09488c9964b8669e463f642c4d\jetified-firebase-common-20.0.0\AndroidManifest.xml:28:13-72
+271            android:directBootAware="true"
+271-->[com.google.firebase:firebase-common:20.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\9947ca09488c9964b8669e463f642c4d\jetified-firebase-common-20.0.0\AndroidManifest.xml:29:13-43
+272            android:exported="false"
+272-->[com.google.firebase:firebase-common:20.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\9947ca09488c9964b8669e463f642c4d\jetified-firebase-common-20.0.0\AndroidManifest.xml:30:13-37
+273            android:initOrder="100" />
+273-->[com.google.firebase:firebase-common:20.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\9947ca09488c9964b8669e463f642c4d\jetified-firebase-common-20.0.0\AndroidManifest.xml:31:13-36
+274
+275        <receiver
+275-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\00e5b9fd3c7b2b88dcc1266008c17bd8\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:29:9-33:20
+276            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+276-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\00e5b9fd3c7b2b88dcc1266008c17bd8\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:30:13-85
+277            android:enabled="true"
+277-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\00e5b9fd3c7b2b88dcc1266008c17bd8\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:31:13-35
+278            android:exported="false" >
+278-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\00e5b9fd3c7b2b88dcc1266008c17bd8\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:32:13-37
+279        </receiver>
+280
+281        <service
+281-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\00e5b9fd3c7b2b88dcc1266008c17bd8\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:35:9-38:40
+282            android:name="com.google.android.gms.measurement.AppMeasurementService"
+282-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\00e5b9fd3c7b2b88dcc1266008c17bd8\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:36:13-84
+283            android:enabled="true"
+283-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\00e5b9fd3c7b2b88dcc1266008c17bd8\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:37:13-35
+284            android:exported="false" />
+284-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\00e5b9fd3c7b2b88dcc1266008c17bd8\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:38:13-37
+285        <service
+285-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\00e5b9fd3c7b2b88dcc1266008c17bd8\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:39:9-43:72
+286            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+286-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\00e5b9fd3c7b2b88dcc1266008c17bd8\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:40:13-87
+287            android:enabled="true"
+287-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\00e5b9fd3c7b2b88dcc1266008c17bd8\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:41:13-35
+288            android:exported="false"
+288-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\00e5b9fd3c7b2b88dcc1266008c17bd8\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:42:13-37
+289            android:permission="android.permission.BIND_JOB_SERVICE" /> <!-- Needs to be explicitly declared on P+ -->
+289-->[com.google.android.gms:play-services-measurement:19.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\00e5b9fd3c7b2b88dcc1266008c17bd8\jetified-play-services-measurement-19.0.0\AndroidManifest.xml:43:13-69
+290        <uses-library
+290-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\fc5087fbe13173432789bf9c0cfcffa3\jetified-play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
+291            android:name="org.apache.http.legacy"
+291-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\fc5087fbe13173432789bf9c0cfcffa3\jetified-play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
+292            android:required="false" />
+292-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\fc5087fbe13173432789bf9c0cfcffa3\jetified-play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
+293
+294        <activity
+294-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\c5497aebbdce9b160724f24eb340c8c8\jetified-play-services-base-17.5.0\AndroidManifest.xml:23:9-26:75
+295            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+295-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\c5497aebbdce9b160724f24eb340c8c8\jetified-play-services-base-17.5.0\AndroidManifest.xml:24:13-79
+296            android:exported="false"
+296-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\c5497aebbdce9b160724f24eb340c8c8\jetified-play-services-base-17.5.0\AndroidManifest.xml:25:13-37
+297            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+297-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\c5497aebbdce9b160724f24eb340c8c8\jetified-play-services-base-17.5.0\AndroidManifest.xml:26:13-72
+298
+299        <meta-data
+299-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\47c1e9e00bafc959a7a1c0ba5f47f456\jetified-play-services-basement-17.5.0\AndroidManifest.xml:23:9-25:69
+300            android:name="com.google.android.gms.version"
+300-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\47c1e9e00bafc959a7a1c0ba5f47f456\jetified-play-services-basement-17.5.0\AndroidManifest.xml:24:13-58
+301            android:value="@integer/google_play_services_version" />
+301-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\47c1e9e00bafc959a7a1c0ba5f47f456\jetified-play-services-basement-17.5.0\AndroidManifest.xml:25:13-66
+302
+303        <service
+303-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\82f2201a1fbdf156192104d538ed5b40\jetified-transport-runtime-3.0.0\AndroidManifest.xml:26:9-30:19
+304            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+304-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\82f2201a1fbdf156192104d538ed5b40\jetified-transport-runtime-3.0.0\AndroidManifest.xml:27:13-117
+305            android:exported="false"
+305-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\82f2201a1fbdf156192104d538ed5b40\jetified-transport-runtime-3.0.0\AndroidManifest.xml:28:13-37
+306            android:permission="android.permission.BIND_JOB_SERVICE" >
+306-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\82f2201a1fbdf156192104d538ed5b40\jetified-transport-runtime-3.0.0\AndroidManifest.xml:29:13-69
+307        </service>
+308
+309        <receiver
+309-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\82f2201a1fbdf156192104d538ed5b40\jetified-transport-runtime-3.0.0\AndroidManifest.xml:32:9-34:40
+310            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+310-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\82f2201a1fbdf156192104d538ed5b40\jetified-transport-runtime-3.0.0\AndroidManifest.xml:33:13-132
+311            android:exported="false" />
+311-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\chira\.gradle\caches\transforms-2\files-2.1\82f2201a1fbdf156192104d538ed5b40\jetified-transport-runtime-3.0.0\AndroidManifest.xml:34:13-37
+312    </application>
+313
+314</manifest>
