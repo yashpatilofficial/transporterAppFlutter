@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter_config/flutter_config.dart';
+import 'package:liveasy/functions/loadOnGoingData.dart';
 import 'package:liveasy/functions/getRequestorDetailsFromPostLoadId.dart';
 import 'package:liveasy/models/LoadModel.dart';
 import 'package:liveasy/models/loadApiModel.dart';
@@ -57,19 +58,43 @@ class LoadApiCalls {
 
     Map jsonData = json.decode(response.body);
 
-    LoadModel loadModel = LoadModel();
-    loadModel.loadingPointCity = jsonData["loadingPointCity"] != null ? jsonData["loadingPointCity"] : 'NA';
-    loadModel.postLoadId = jsonData["postLoadId"] != null ? jsonData["postLoadId"] : 'NA';
-    loadModel.unloadingPointCity = jsonData["unloadingPointCity"] != null ? jsonData["unloadingPointCity"] : 'NA';
-    loadModel.productType = jsonData["productType"] != null ? jsonData["productType"] : 'NA';
-    loadModel.noOfTrucks = jsonData["noOfTrucks"] != null ? jsonData["noOfTrucks"] : 'NA';
+    if(response.statusCode == 200){
+
+      LoadModel loadModel = LoadModel();
+      loadModel.loadingPointCity = jsonData["loadingPointCity"] != null ? jsonData["loadingPointCity"] : 'NA';
+      loadModel.postLoadId = jsonData["postLoadId"] != null ? jsonData["postLoadId"] : 'NA';
+      loadModel.unloadingPointCity = jsonData["unloadingPointCity"] != null ? jsonData["unloadingPointCity"] : 'NA';
+      loadModel.productType = jsonData["productType"] != null ? jsonData["productType"] : 'NA';
+      loadModel.noOfTrucks = jsonData["noOfTrucks"] != null ? jsonData["noOfTrucks"] : 'NA';
+
+    if(loadModel.postLoadId != null && loadModel.postLoadId != 'NA'){
     LoadPosterModel loadPosterModel = await getLoadPosterDetailsFromPostLoadId(loadModel.postLoadId);
     loadModel.loadPosterCompanyName = loadPosterModel.loadPosterCompanyName;
     loadModel.loadPosterPhoneNo = loadPosterModel.loadPosterPhoneNo;
     loadModel.loadPosterLocation = loadPosterModel.loadPosterLocation;
     loadModel.loadPosterName = loadPosterModel.loadPosterName;
-    loadModel.loadPosterCompanyApproved = loadPosterModel.loadPosterCompanyApproved;
-
-    return loadModel;
+    loadModel.loadPosterCompanyApproved = loadPosterModel.loadPosterCompanyApproved;}
+    return loadModel;}
+    else if(response.statusCode == 404){
+    //case when load is not present in loadApi
+    }
   }
-} //class end
+  } //class end
+
+  Future<void> disableActionOnload({String? loadId}) async {
+
+    final String loadApiUrl = FlutterConfig.get("loadApiUrl");
+
+    Map<String, String> data = {"status": "EXPIRED"};
+
+    String body = json.encode(data);
+
+    final response = await http.put(Uri.parse("$loadApiUrl/$loadId"),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: body);
+
+    print("loadId ====== $loadApiUrl/$loadId ");
+    print("Response of disable data ${response.body}");
+  }//class end
