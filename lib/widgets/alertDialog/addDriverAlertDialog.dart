@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -18,6 +20,12 @@ import 'package:liveasy/widgets/buttons/addButton.dart';
 import 'package:fluttercontactpicker/fluttercontactpicker.dart';
 import 'package:liveasy/widgets/buttons/cancelButtonForAddNewDriver.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import 'CompletedDialog.dart';
+import 'conflictDialog.dart';
+import 'loadingAlertDialog.dart';
+import 'orderFailedAlertDialog.dart';
 
 // ignore: must_be_immutable
 class AddDriverAlertDialog extends StatefulWidget {
@@ -38,7 +46,7 @@ class _AddDriverAlertDialogState extends State<AddDriverAlertDialog> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Driver’s Name",
+            AppLocalizations.of(context)!.driverName,
             style: TextStyle(
                 fontSize: size_9,
                 fontWeight: normalWeight,
@@ -114,7 +122,7 @@ class _AddDriverAlertDialogState extends State<AddDriverAlertDialog> {
             height: space_2 + 2,
           ),
           Text(
-            "Driver's Number",
+            AppLocalizations.of(context)!.driverNumber,
             style: TextStyle(
                 fontSize: size_9,
                 fontWeight: normalWeight,
@@ -138,7 +146,7 @@ class _AddDriverAlertDialogState extends State<AddDriverAlertDialog> {
                 controller: driverNumberController,
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
-                  hintText: "Type here",
+                  hintText: AppLocalizations.of(context)!.typeHere,
                   hintStyle: TextStyle(
                       color: textLightColor,
                       fontSize: size_8,
@@ -164,35 +172,51 @@ class _AddDriverAlertDialogState extends State<AddDriverAlertDialog> {
                   TransporterIdController tIdController =
                       Get.find<TransporterIdController>();
                   String transporterId = '${tIdController.transporterId}';
+                  String? driverAdded = "";
+                  if (driverAdded == "") {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return LoadingAlertDialog();
+                      },
+                    );
+                  }
                   ResponseModel? response = await driverApiCalls.postDriverApi(
                       driverNameController.text,
                       driverNumberController.text,
                       transporterId);
                   if (response != null) {
                     if (response.statusCode == 201 && response.id != null) {
-                      // driver added successfully
-                      Get.back();
-                      Get.back();
+                      // driver added successfully8
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return completedDialog(
+                            upperDialogText: "Driver successfully Added !",
+                            lowerDialogText: "",
+                          );
+                        },
+                      );
+                      Timer(Duration(seconds: 3),
+                          () => {Get.back(), Get.back(), Get.back()});
 
                       //For Book Now Alert Dialog
                       await getTruckDetailsFromTruckApi(context);
                       await getDriverDetailsFromDriverApi(context);
+
                       print(
                           "response id of driver ----->>${returnResponse.id}");
 
                       // providerData.updateDropDownValue(
                       //     );
-                    } else {
+                    } else if (response.statusCode == 409) {
                       // most likely user trying to add same number again
-                      Get.defaultDialog(
-                        content: Container(
-                          child: Column(
-                            children: [
-                              Text("Conflict !"),
-                              Text("${response.message}")
-                            ],
-                          ),
-                        ),
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return ConflictDialog(
+                              dialog: 'This driver is already added');
+                        },
                       );
                     }
                   } else {
@@ -214,14 +238,21 @@ class _AddDriverAlertDialogState extends State<AddDriverAlertDialog> {
                     content: Container(
                       child: Column(
                         children: [
-                          Text("Error!"),
-                          Text("Enter a valid 10 digit number")
+                          Text(AppLocalizations.of(context)!.error +"!"),
+                          Text(AppLocalizations.of(context)!.enterValid10DigitNumber)
                         ],
                       ),
                     ),
                   );
+                    //user entered an invalid mobile number
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return OrderFailedAlertDialog();
+                      },
+                    );
+                  }
                 }
-              },
             ),
             CancelButtonForAddNewDriver()
           ],
