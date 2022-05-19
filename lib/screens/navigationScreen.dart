@@ -91,6 +91,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
   initfunction() async {
     var gpsRoute1 = await mapUtil.getTraccarSummary(
         deviceId: truckData.deviceId, from: from, to: to);
+    print("NAVIGATION SCREEN");
     setState(() {
       totalDistance = (gpsRoute1[0].distance / 1000).toStringAsFixed(2);
     });

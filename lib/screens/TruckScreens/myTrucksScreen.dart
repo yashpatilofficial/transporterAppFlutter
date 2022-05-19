@@ -153,9 +153,8 @@ class _MyTrucksState extends State<MyTrucks> {
                 //       setState(() {
                 //         //trucksNearUserController.updateDistanceRadiusData(16000);
                 //         //trucksNearUserController.updateNearStatusData(false);
-                //         // Get.to(() => nearbyTrucksScreen(
-                //         //     gpsDataList: gpsDataList,
-                //         //     truckDataList: trucklist));
+                //         Get.to(() => NearbyTrucksResult(
+                //             gpsDataList: gpsDataList, deviceList: devicelist));
 
                 //         // showDialog(
                 //         //         context: context,

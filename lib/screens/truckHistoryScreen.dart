@@ -239,8 +239,8 @@ class _TruckHistoryScreenState extends State<TruckHistoryScreen> {
 
       var gpsDataHistory1 = await b;
       var gpsStoppageHistory1 = await a;
-      distancecalculation(istDate1.toIso8601String(),
-          istDate2.toIso8601String());
+      distancecalculation(
+          istDate1.toIso8601String(), istDate2.toIso8601String());
       if (gpsStoppageHistory != null) {
         setState(() {
           gpsStoppageHistory = gpsStoppageHistory1;
@@ -285,13 +285,16 @@ class _TruckHistoryScreenState extends State<TruckHistoryScreen> {
   void dispose() {
     super.dispose();
   }
+
   distancecalculation(String from, String to) async {
     var gpsRoute1 = await mapUtil.getTraccarSummary(
         deviceId: widget.deviceId, from: from, to: to);
+    print("TRUCK HISTORY SCREEN");
     setState(() {
       totalDistance = (gpsRoute1[0].distance / 1000).toStringAsFixed(2);
     });
   }
+
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
@@ -691,8 +694,8 @@ class _TruckHistoryScreenState extends State<TruckHistoryScreen> {
     var b = getRouteStatusList(widget.deviceId, istDate1.toIso8601String(),
         istDate2.toIso8601String());
     var gpsRoute2 = await b;
-  //  totalDistance = getTotalDistance(gpsRoute2);
-    gpsRoute2 = getStopList(gpsRoute2,gpsStoppageHistory, istDate1, istDate2);
+    //  totalDistance = getTotalDistance(gpsRoute2);
+    gpsRoute2 = getStopList(gpsRoute2, gpsStoppageHistory, istDate1, istDate2);
 
     setState(() {
       setState(() {

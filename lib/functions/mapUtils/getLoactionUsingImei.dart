@@ -51,6 +51,18 @@ class MapUtil {
           devicemodel.status = json["status"] != null ? json["status"] : 'NA';
           devicemodel.lastUpdate =
               json["lastUpdate"] != null ? json["lastUpdate"] : 'NA';
+          devicemodel.tyre = json["attributes"]["tyre"] != null
+              ? json["attributes"]["tyre"]
+              : 0;
+          devicemodel.passingWeight =
+              json["attributes"]["passingWeight"] != null
+                  ? json["attributes"]["passingWeight"]
+                  : 'NA';
+          devicemodel.phone = json["phone"] != null ? json["phone"] : 'NA';
+          devicemodel.contact =
+              json["contact"] != null ? json["contact"] : 'NA';
+          devicemodel.category =
+              json["category"] != null ? json["category"] : 'NA';
 
           devicesList.add(devicemodel);
         }
@@ -266,8 +278,8 @@ class MapUtil {
     String? from,
     String? to,
   }) async {
-    print("FROM : $from");
-    print("TO : $to");
+    print("FROM IN HISTORY: $from");
+    print("TO IN HISTORY: $to");
     print("$traccarApi");
     print("$deviceId");
     try {
@@ -279,7 +291,7 @@ class MapUtil {
           'Accept': 'application/json'
         },
       );
-      print(response.statusCode);
+      print("code is ${response.statusCode}");
       print(response.body);
       var jsonData = await jsonDecode(response.body);
       print(response.body);
@@ -290,7 +302,6 @@ class MapUtil {
           // gpsDataModel.id = json["id"] != null ? json["id"] : 'NA';
           gpsDataModel.deviceId =
               json["deviceId"] != null ? json["deviceId"] : 'NA';
-
           gpsDataModel.latitude =
               json["latitude"] != null ? json["latitude"] : 0;
           gpsDataModel.longitude =
@@ -322,8 +333,8 @@ class MapUtil {
     String? from,
     String? to,
   }) async {
-    print("FROM : $from");
-    print("TO : $to");
+    print("FROM IN STOPPAGES: $from");
+    print("TO IN STOPPAGES : $to");
 
     try {
       http.Response response = await http.get(
@@ -374,8 +385,8 @@ class MapUtil {
     String? from,
     String? to,
   }) async {
-    print("FROM : $from");
-    print("TO : $to");
+    print("FROM IN TRIPS : $from");
+    print("TO IN TRIPS : $to");
 
     try {
       http.Response response = await http.get(
@@ -434,15 +445,15 @@ class MapUtil {
     String? from,
     String? to,
   }) async {
-    print("FROM : $from");
-    print("TO : $to");
+    print("FROM SUMMARY: $from");
+    print("TO SUMMARY: $to");
 
     try {
       http.Response response = await http.get(
           Uri.parse(
               "$traccarApi/reports/summary?deviceId=$deviceId&from=${from}Z&to=${to}Z"),
           headers: <String, String>{'authorization': basicAuth});
-      print(response.statusCode);
+      print("CODE IS response.statusCode");
       print(response.body);
       var jsonData = await jsonDecode(response.body);
       print(response.body);
@@ -466,9 +477,10 @@ class MapUtil {
           // print("Device time : ${gpsDataModel.deviceTime}");
 
           LatLongList.add(gpsDataModel);
+          return gpsDataModel;
         }
-        print("TDSummary $LatLongList");
-        return LatLongList;
+        print("TTTTTTTTDSummary $LatLongList");
+        //return LatLongList;
       } else {
         return null;
       }

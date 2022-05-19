@@ -132,6 +132,7 @@ class _TrackScreenState extends State<TrackScreen> with WidgetsBindingObserver {
   double averagelon = 0;
   var totalStoppedTime = "";
   var status;
+  var distanceTravelled;
   bool loading = false;
   DateTime yesterday =
       DateTime.now().subtract(Duration(days: 1, hours: 5, minutes: 30));
@@ -143,7 +144,6 @@ class _TrackScreenState extends State<TrackScreen> with WidgetsBindingObserver {
   var lockState;
   var col1 = Color(0xff878787);
   var col2 = Color(0xffFF5C00);
-  //var Get;
 
   @override
   void initState() {
@@ -369,6 +369,8 @@ class _TrackScreenState extends State<TrackScreen> with WidgetsBindingObserver {
     // var f1 = mapUtil.getTraccarPosition(deviceId: widget.deviceId);
     var f = getDataHistory(widget.deviceId, from, to);
     var s = getStoppageHistory(widget.deviceId, from, to);
+    var gpsRoute1 = await mapUtil.getTraccarSummary(
+        deviceId: newGPSData.last.deviceId, from: from, to: to);
     //  var t = getRouteStatusList(widget.deviceId, from, to);
     //   var gpsRoute = await t;
     var newGpsDataHistory = await f;
@@ -380,6 +382,7 @@ class _TrackScreenState extends State<TrackScreen> with WidgetsBindingObserver {
       // newGPSRoute = gpsRoute;
       gpsDataHistory = newGpsDataHistory;
       gpsStoppageHistory = newGpsStoppageHistory;
+      distanceTravelled = (gpsRoute1.distance / 1000).toStringAsFixed(2);
       selectedDate = DateTimeRange(start: istDate1, end: istDate2);
       //  print("NEW ROute $newGPSRoute");
       totalDistance = widget.totalDistance;
@@ -415,17 +418,21 @@ class _TrackScreenState extends State<TrackScreen> with WidgetsBindingObserver {
     // var f1 = mapUtil.getTraccarPosition(deviceId: widget.deviceId);
     var f = getDataHistory(newGPSData.last.deviceId, from, to);
     var s = getStoppageHistory(newGPSData.last.deviceId, from, to);
+    var gpsRoute1 = await mapUtil.getTraccarSummary(
+        deviceId: newGPSData.last.deviceId, from: from, to: to);
     // var t = getRouteStatusList(newGPSData.last.deviceId, from, to);
     //  distancecalculation(from,to);
     // var gpsData = await f1;
     // var gpsRoute = await t;
     var newGpsDataHistory = await f;
     var newGpsStoppageHistory = await s;
+
     setState(() {
       //  newGPSData = gpsData;
       // newGPSRoute = gpsRoute;
       gpsDataHistory = newGpsDataHistory;
       gpsStoppageHistory = newGpsStoppageHistory;
+      distanceTravelled = (gpsRoute1.distance / 1000).toStringAsFixed(2);
       selectedDate = DateTimeRange(start: istDate1, end: istDate2);
       //   print("NEW ROute $newGPSRoute");
 
@@ -880,7 +887,7 @@ class _TrackScreenState extends State<TrackScreen> with WidgetsBindingObserver {
                                         CameraUpdate.newCameraPosition(
                                       CameraPosition(
                                         bearing: 0,
-                                        target: LatLng(averagelat, averagelon),
+                                        target: lastlatLngMarker,
                                         zoom: this.zoom,
                                       ),
                                     ));
@@ -1109,7 +1116,7 @@ class _TrackScreenState extends State<TrackScreen> with WidgetsBindingObserver {
                   totalStoppedTime: totalStoppedTime,
                   //  truckId: widget.truckId,
                   deviceId: widget.deviceId,
-                  // totalDistance: totalDistance,
+                  totalDistance: distanceTravelled,
                   recentStops: gpsStoppageHistory,
                   imei: widget.imei,
                   //    timer2: timer2,

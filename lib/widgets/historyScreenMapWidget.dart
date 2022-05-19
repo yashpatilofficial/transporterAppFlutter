@@ -514,6 +514,7 @@ class _HistoryScreenMapWidgetState extends State<HistoryScreenMapWidget>
   distancecalculation(String from, String to) async {
     var gpsRoute1 = await mapUtil.getTraccarSummary(
         deviceId: widget.deviceId, from: from, to: to);
+    print("HISTORY SCREEN MAP SCREEN");
     setState(() {
       totalDistance = (gpsRoute1[0].distance / 1000).toStringAsFixed(2);
     });
@@ -577,7 +578,7 @@ class _HistoryScreenMapWidgetState extends State<HistoryScreenMapWidget>
                   ),
                   Positioned(
                     left: 10,
-                    top: MediaQuery.of(context).size.height / 4 + 20,
+                    top: 175,
                     child: Container(
                         decoration: BoxDecoration(
                           border: Border.all(
@@ -589,6 +590,7 @@ class _HistoryScreenMapWidgetState extends State<HistoryScreenMapWidget>
                         child: Row(
                           children: [
                             Container(
+                              height: 40,
                               decoration: BoxDecoration(
                                   color: col2,
                                   borderRadius: BorderRadius.horizontal(
@@ -621,6 +623,7 @@ class _HistoryScreenMapWidgetState extends State<HistoryScreenMapWidget>
                                   )),
                             ),
                             Container(
+                              height: 40,
                               decoration: BoxDecoration(
                                 color: col1,
                                 borderRadius: BorderRadius.horizontal(

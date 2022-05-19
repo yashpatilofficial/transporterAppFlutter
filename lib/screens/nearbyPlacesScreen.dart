@@ -93,6 +93,8 @@ class _NearbyPlacesScreenState extends State<NearbyPlacesScreen>
   double pinPillPosition = -100;
   int placesIndex = 0;
   String currentLanguage = "en";
+  var col1 = Color(0xff878787);
+  var col2 = Color(0xffFF5C00);
 
   Future<void> callApi(double lat, double lon) async {
     var url = Uri.parse(
@@ -476,9 +478,73 @@ class _NearbyPlacesScreenState extends State<NearbyPlacesScreen>
                       Positioned(
                         left: 10,
                         top: 175,
-                        child: SizedBox(
-                          height: 40,
-                          child: FloatingActionButton(
+                        child: Container(
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Colors.grey,
+                                width: 0.25,
+                              ),
+                            ),
+                            //  height: 40,
+                            child: Row(
+                              children: [
+                                Container(
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                      color: col2,
+                                      borderRadius: BorderRadius.horizontal(
+                                          left: Radius.circular(5)),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: const Color.fromRGBO(
+                                              0, 0, 0, 0.25),
+                                          offset: const Offset(
+                                            0,
+                                            4,
+                                          ),
+                                          blurRadius: 4,
+                                          spreadRadius: 0.0,
+                                        ),
+                                      ]),
+                                  child: TextButton(
+                                      onPressed: () {
+                                        setState(() {
+                                          this.maptype = MapType.normal;
+                                          col1 = Color(0xff878787);
+                                          col2 = Color(0xffFF5C00);
+                                        });
+                                      },
+                                      child: Text(
+                                        'Map',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                        ),
+                                      )),
+                                ),
+                                Container(
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    color: col1,
+                                    borderRadius: BorderRadius.horizontal(
+                                        right: Radius.circular(5)),
+                                    //  border: Border.all(color: Colors.black),
+                                  ),
+                                  child: TextButton(
+                                      onPressed: () {
+                                        setState(() {
+                                          this.maptype = MapType.satellite;
+                                          col2 = Color(0xff878787);
+                                          col1 = Color(0xffFF5C00);
+                                        });
+                                      },
+                                      child: Text('Satellite',
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                          ))),
+                                )
+                              ],
+                            )
+                            /*        FloatingActionButton(
                             heroTag: "btn1",
                             backgroundColor: Colors.white,
                             foregroundColor: Colors.black,
@@ -492,8 +558,30 @@ class _NearbyPlacesScreenState extends State<NearbyPlacesScreen>
                               });
                             },
                           ),
-                        ),
+                   */
+                            ),
                       ),
+                      // Positioned(
+                      //   left: 10,
+                      //   top: 175,
+                      //   child: SizedBox(
+                      //     height: 40,
+                      //     child: FloatingActionButton(
+                      //       heroTag: "btn1",
+                      //       backgroundColor: Colors.white,
+                      //       foregroundColor: Colors.black,
+                      //       child: const Icon(Icons.my_location,
+                      //           size: 22, color: Color(0xFF152968)),
+                      //       onPressed: () {
+                      //         setState(() {
+                      //           this.maptype = (this.maptype == MapType.normal)
+                      //               ? MapType.satellite
+                      //               : MapType.normal;
+                      //         });
+                      //       },
+                      //     ),
+                      //   ),
+                      // ),
                       Positioned(
                         right: 10,
                         bottom: height / 3 + 170,

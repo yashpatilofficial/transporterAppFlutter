@@ -31,7 +31,7 @@ class TrackScreenDetails extends StatefulWidget {
   var totalStoppedTime;
   var deviceId;
   //var truckId;
-  // var totalDistance;
+  var totalDistance;
   var imei;
   var recentStops;
 
@@ -49,7 +49,7 @@ class TrackScreenDetails extends StatefulWidget {
     required this.totalStoppedTime,
     required this.deviceId,
     //required this.truckId,
-    // required this.totalDistance,
+    required this.totalDistance,
     this.imei,
     this.recentStops,
   });
@@ -87,17 +87,18 @@ class _TrackScreenDetailsState extends State<TrackScreenDetails> {
   }
 
   distancecalculation(String from, String to) async {
+    print("FROM IN THE FUNCTION IS $from");
+    print("TO IN THE FUNCTION IS $to");
     var gpsRoute1 = await mapUtil.getTraccarSummary(
         deviceId: widget.gpsData.last.deviceId, from: from, to: to);
+    //print(${gpsRoute1[0].distance});
     setState(() {
-      totalDistance = (gpsRoute1[0].distance / 1000).toStringAsFixed(2);
+      totalDistance = (gpsRoute1.distance / 1000).toStringAsFixed(2);
     });
   }
 
   initFunction2() {
     setState(() {
-      gpsStoppageHistory = widget.gpsStoppageHistory;
-
       recentStops = widget.recentStops;
       gpsData = widget.gpsData;
       // gpsTruckRoute = widget.gpsTruckRoute;
@@ -352,7 +353,7 @@ class _TrackScreenDetailsState extends State<TrackScreenDetails> {
                                         fontSize: size_6,
                                         fontStyle: FontStyle.normal,
                                         fontWeight: regularWeight)),
-                                Text("$totalDistance " + "km".tr,
+                                Text("${widget.totalDistance} " + "km".tr,
                                     softWrap: true,
                                     style: TextStyle(
                                         color: black,
